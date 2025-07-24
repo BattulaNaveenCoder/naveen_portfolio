@@ -13,7 +13,7 @@ import {
   Menu,
   X,
   Layers,
-  Cloud,
+  Cloud,  
   GraduationCap,
   Utensils,
   Award,
@@ -188,7 +188,7 @@ const Portfolio = () => {
                         <div className="text-sm opacity-80">Years Experience</div>
                       </div>
                       <div>
-                        <div className="text-2xl font-bold">50+</div>
+                        <div className="text-2xl font-bold">5+</div>
                         <div className="text-sm opacity-80">Projects Completed</div>
                       </div>
                     </div>
