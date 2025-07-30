@@ -19,7 +19,8 @@ import {
   Award,
   ArrowRight,
   Star,
-  Sparkles
+  Sparkles,
+  Briefcase
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -323,20 +324,22 @@ const Portfolio = () => {
   const ProjectsSection = () => {
     const projects = [
   {
-    title: 'Agaman - Job Portal Application',
-    role: 'Full Stack Developer',
-    description:
-      'End-to-end job portal enabling user registration, resume upload, job applications, and admin management.',
-    technologies: ['ReactJS', 'ASP.NET Core', 'MySQL', 'Bootstrap'],
-    icon: <Briefcase size={40} />, // Make sure you import 'Briefcase' from lucide-react
-    color: 'from-green-500 to-lime-500',
-    features: [
-      'User & employer dashboards',
-      'Resume parsing & uploads',
-      'Job search & filters',
-      'Admin panel for job management'
-    ]
-  },
+  title: 'Agaman - Job Portal Application',
+  role: 'Full Stack Developer',
+  description:
+    'Full-featured job portal platform allowing users to register, upload resumes, apply for jobs, and get tailored resume descriptions using AI based on job descriptions.',
+  technologies: ['ReactJS', 'ASP.NET Core', 'MySQL', 'Bootstrap', 'OpenAI API'],
+  icon: <Briefcase size={40} />,
+  color: 'from-green-500 to-lime-500',
+  features: [
+    'User & employer dashboards',
+    'Resume upload & parsing',
+    'AI-powered tailoring of resume based on JD',
+    'Job search with filters and tracking',
+    'Admin panel for managing postings'
+  ],
+ 
+},
   {
     title: 'A2Z - Azure Learning Mobile App',
     role: 'Lead Developer',
