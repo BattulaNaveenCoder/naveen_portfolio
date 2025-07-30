@@ -322,34 +322,53 @@ const Portfolio = () => {
 
   const ProjectsSection = () => {
     const projects = [
-      {
-        title: 'A2Z - Azure Learning Mobile App',
-        role: 'Lead Developer',
-        description: 'Comprehensive mobile application for Azure learning with mock exams, progress tracking, and certification preparation.',
-        technologies: ['.NET MAUI', 'ASP.NET Core', 'SQL Server', 'MVVM'],
-        icon: <Cloud size={40} />,
-        color: 'from-blue-500 to-cyan-500',
-        features: ['Cross-platform development', 'Mock exams system', 'Progress tracking', 'Certification prep']
-      },
-      {
-        title: 'BITC - E-Learning Platform',
-        role: 'Software Developer',
-        description: 'Educational platform offering technology courses with video tutorials, study materials, and interactive learning.',
-        technologies: ['ReactJS', 'ASP.NET Core', 'Bootstrap', 'SQL Server'],
-        icon: <GraduationCap size={40} />,
-        color: 'from-purple-500 to-pink-500',
-        features: ['Video tutorials', 'Live classes', 'Interactive content', 'Progress tracking']
-      },
-      {
-        title: 'Restaurant POS System',
-        role: 'Software Developer',
-        description: 'Complete restaurant management system with order tracking, kitchen operations, and comprehensive sales analytics.',
-        technologies: ['Angular', 'ASP.NET Core', 'SQL Server', 'Bootstrap'],
-        icon: <Utensils size={40} />,
-        color: 'from-orange-500 to-red-500',
-        features: ['Order management', 'Kitchen coordination', 'Sales analytics', 'Real-time tracking']
-      }
-    ];
+  {
+    title: 'Agaman - Job Portal Application',
+    role: 'Full Stack Developer',
+    description:
+      'End-to-end job portal enabling user registration, resume upload, job applications, and admin management.',
+    technologies: ['ReactJS', 'ASP.NET Core', 'MySQL', 'Bootstrap'],
+    icon: <Briefcase size={40} />, // Make sure you import 'Briefcase' from lucide-react
+    color: 'from-green-500 to-lime-500',
+    features: [
+      'User & employer dashboards',
+      'Resume parsing & uploads',
+      'Job search & filters',
+      'Admin panel for job management'
+    ]
+  },
+  {
+    title: 'A2Z - Azure Learning Mobile App',
+    role: 'Lead Developer',
+    description:
+      'Comprehensive mobile application for Azure learning with mock exams, progress tracking, and certification preparation.',
+    technologies: ['.NET MAUI', 'ASP.NET Core', 'SQL Server', 'MVVM'],
+    icon: <Cloud size={40} />,
+    color: 'from-blue-500 to-cyan-500',
+    features: [
+      'Cross-platform development',
+      'Mock exams system',
+      'Progress tracking',
+      'Certification prep'
+    ]
+  },
+  {
+    title: 'BITC - E-Learning Platform',
+    role: 'Software Developer',
+    description:
+      'Educational platform offering technology courses with video tutorials, study materials, and interactive learning.',
+    technologies: ['ReactJS', 'ASP.NET Core', 'Bootstrap', 'SQL Server'],
+    icon: <GraduationCap size={40} />,
+    color: 'from-purple-500 to-pink-500',
+    features: [
+      'Video tutorials',
+      'Live classes',
+      'Interactive content',
+      'Progress tracking'
+    ]
+  }
+];
+
 
     return (
       <section id="projects" className="py-20 relative">
