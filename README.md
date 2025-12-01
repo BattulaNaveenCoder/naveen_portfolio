@@ -1,12 +1,55 @@
-# React + Vite
+# Naveen Portfolio (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern portfolio site built with React and Vite, styled using Tailwind CSS via CDN. The app is organized into clear sections and reusable components.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+src/
+	components/
+		FloatingParticles.jsx
+		Navigation.jsx
+	sections/
+		About.jsx
+		Contact.jsx
+		Hero.jsx
+		Projects.jsx
+		Skills.jsx
+	data/
+		projects.js
+		skills.js
+	hooks/
+		useActiveSection.js
+	App.jsx
+	main.jsx
+	index.css
+```
 
-## Expanding the ESLint configuration
+## Key Concepts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Sections are split into dedicated files under `src/sections` for clarity.
+- Reusable UI is under `src/components`.
+- Static content (skills, projects) lives in `src/data` as plain objects.
+- Active section highlighting uses `IntersectionObserver` via `useActiveSection`.
+- Tailwind is loaded from CDN in `index.html` (no build-time Tailwind config required).
+
+## Develop
+
+```powershell
+npm install
+npm run dev
+```
+
+Visit the local URL printed in the terminal to preview.
+
+## Build
+
+```powershell
+npm run build
+npm run preview
+```
+
+## Notes
+
+- If you prefer a build-time Tailwind setup (JIT, custom config), we can switch from CDN to local Tailwind with PostCSS.
+- Icons are from `lucide-react` and are mapped from simple string keys in the data files.
