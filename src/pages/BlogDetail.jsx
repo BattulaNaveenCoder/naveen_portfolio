@@ -116,6 +116,38 @@ const BlogDetail = () => {
                     </ol>
                   );
                 },
+                table({ children }) {
+                  return (
+                    <div className="my-6 overflow-x-auto">
+                      <table className="w-full table-auto border-collapse text-sm">
+                        {children}
+                      </table>
+                    </div>
+                  );
+                },
+                thead({ children }) {
+                  return <thead className="bg-white/5">{children}</thead>;
+                },
+                tbody({ children }) {
+                  return <tbody className="divide-y divide-white/10">{children}</tbody>;
+                },
+                tr({ children }) {
+                  return <tr className="hover:bg-white/5 transition-colors">{children}</tr>;
+                },
+                th({ children }) {
+                  return (
+                    <th className="text-left font-semibold text-white px-4 py-2 border border-white/10">
+                      {children}
+                    </th>
+                  );
+                },
+                td({ children }) {
+                  return (
+                    <td className="text-gray-200 px-4 py-2 border border-white/10 align-top">
+                      {children}
+                    </td>
+                  );
+                },
                 code({ inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || '');
                   return inline ? (
