@@ -31,7 +31,7 @@ const About = () => (
           <div className="bg-purple-500 bg-opacity-10 backdrop-blur-xl rounded-2xl p-6 border border-purple-500 border-opacity-20 hover:scale-105 transition-transform duration-300">
             <Smartphone size={40} className="text-purple-400 mb-4" />
             <h4 className="text-white font-semibold mb-2">Mobile Development</h4>
-            <p className="text-gray-400 text-sm">.NET MAUI, Xamarin Forms, Cross-platform solutions</p>
+            <p className="text-gray-400 text-sm">React Native,.NET MAUI, Xamarin Forms, Cross-platform solutions</p>
           </div>
 
           <div className="bg-pink-500 bg-opacity-10 backdrop-blur-xl rounded-2xl p-6 border border-pink-500 border-opacity-20 hover:scale-105 transition-transform duration-300">

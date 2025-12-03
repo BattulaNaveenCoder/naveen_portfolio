@@ -6,6 +6,7 @@ import About from './pages/About.jsx';
 import Skills from './pages/Skills.jsx';
 import Projects from './pages/Projects.jsx';
 import Blogs from './pages/Blogs.jsx';
+import BlogDetail from './pages/BlogDetail.jsx';
 import Contact from './pages/Contact.jsx';
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:id" element={<BlogDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
