@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const DEFAULT = {
@@ -14,28 +14,42 @@ export function SEO({ title, description, image, canonical }) {
   const metaImg = image || DEFAULT.image
   const url = canonical || pathname
 
-  return (
-    <Helmet>
-      <title>{fullTitle}</title>
-      <meta name="description" content={metaDesc} />
-      <link rel="canonical" href={url} />
+  useEffect(() => {
+    document.title = fullTitle
 
-      {/* Open Graph */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={metaDesc} />
-      <meta property="og:image" content={metaImg} />
-      <meta property="og:url" content={url} />
+    const setTag = (selector, attribute, value) => {
+      let el = document.head.querySelector(selector)
+      if (!el) {
+        el = document.createElement(selector.startsWith('meta') ? 'meta' : selector.startsWith('link') ? 'link' : 'meta')
+        if (selector.startsWith('meta[name="')) {
+          const name = selector.match(/meta\[name="([^"]+)"\]/)?.[1]
+          if (name) el.setAttribute('name', name)
+        } else if (selector.startsWith('meta[property="')) {
+          const prop = selector.match(/meta\[property="([^"]+)"\]/)?.[1]
+          if (prop) el.setAttribute('property', prop)
+        } else if (selector.startsWith('link[rel="')) {
+          const rel = selector.match(/link\[rel="([^"]+)"\]/)?.[1]
+          if (rel) el.setAttribute('rel', rel)
+        }
+        document.head.appendChild(el)
+      }
+      el.setAttribute(attribute, value)
+    }
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={metaDesc} />
-      <meta name="twitter:image" content={metaImg} />
-    </Helmet>
-  )
-}
+    setTag('meta[name="description"]', 'content', metaDesc)
+    setTag('link[rel="canonical"]', 'href', url)
 
-export function SEOProvider({ children }) {
-  return <HelmetProvider>{children}</HelmetProvider>
+    setTag('meta[property="og:type"]', 'content', 'website')
+    setTag('meta[property="og:title"]', 'content', fullTitle)
+    setTag('meta[property="og:description"]', 'content', metaDesc)
+    setTag('meta[property="og:image"]', 'content', metaImg)
+    setTag('meta[property="og:url"]', 'content', url)
+
+    setTag('meta[name="twitter:card"]', 'content', 'summary_large_image')
+    setTag('meta[name="twitter:title"]', 'content', fullTitle)
+    setTag('meta[name="twitter:description"]', 'content', metaDesc)
+    setTag('meta[name="twitter:image"]', 'content', metaImg)
+  }, [fullTitle, metaDesc, metaImg, url])
+
+  return null
 }
