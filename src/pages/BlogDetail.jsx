@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypePrism from 'rehype-prism-plus';
 import 'prismjs/themes/prism-tomorrow.css';
+import { SEO } from '../seo/SEO.jsx';
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -33,6 +34,12 @@ const BlogDetail = () => {
   return (
     <section className="py-20">
       <div className="max-w-4xl mx-auto px-6">
+        <SEO
+          title={post.title}
+          description={post.subtitle || post.excerpt || 'Blog post by Naveen Battula'}
+          image={post.image}
+          canonical={`/blogs/${post.id}`}
+        />
         <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10 bg-white/5">
           <img
             src={post.image || 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop'}
