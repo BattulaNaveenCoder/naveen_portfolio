@@ -10,7 +10,7 @@ import BlogDetail from './pages/BlogDetail.jsx';
 import Contact from './pages/Contact.jsx';
 
 const App = () => (
-  <BrowserRouter basename={import.meta.env.BASE_URL}>
+  <BrowserRouter>
     <Routes>
       <Route element={<MainLayout />}>        
         <Route path="/" element={<Home />} />

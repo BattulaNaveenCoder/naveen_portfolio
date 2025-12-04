@@ -4,7 +4,4 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Set base for GitHub Pages: https://<user>.github.io/<repo>/
-  // Update this if hosting under a different subpath
-  base: '/naveen_portfolio/',
 })
